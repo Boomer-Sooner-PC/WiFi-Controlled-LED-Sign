@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>LED Sign</title>
+        <script>
+            function textSubmit() {
+                text = document.getElementById("text").value;
+                window.location = window.location.origin + "/text/" + text;
+            }
+            function speedSubmit() {
+                text = document.getElementById("speed").value;
+
+                window.location = window.location.origin + "/speed/" + text;
+            }
+            function colorSubmit() {
+                text = document.getElementById("color").value.replace("#", "");
+                window.location = window.location.origin + "/color/" + text;
+            }
+            function brightnessSubmit() {
+                text = document.getElementById("brightness").value;
+                window.location =
+                    window.location.origin + "/brightness/" + text;
+            }
+        </script>
+    </head>
+    <body style="align-content: center">
+        <h1 style="text-align: center; font-family: monospace">
+            LED Sign Control
+        </h1>
+        <form style="text-align: center" onsubmit="return false">
+            <input
+                type="text"
+                id="text"
+                style="width: 30vw; margin-left: 0vw"
+            /><br />
+            <label style="font-family: monospace"
+                >Enter the text you want displayed here</label
+            ><br />
+            <button onclick="textSubmit()">Enter</button>
+        </form>
+
+        <form
+            style="text-align: center; margin-top: 5vh"
+            onsubmit="return false"
+        >
+            <input
+                type="text"
+                id="speed"
+                style="width: 30vw; margin-left: 0vw"
+            /><br />
+            <label style="font-family: monospace"
+                >Enter the delay between updates</label
+            ><br />
+            <button onclick="speedSubmit()">Enter</button>
+        </form>
+
+        <form
+            style="text-align: center; margin-top: 5vh"
+            onsubmit="return false"
+        >
+            <input
+                type="color"
+                value="#ffffff"
+                id="color"
+                style="width: 30vw; margin-left: 0vw"
+            /><br />
+            <label style="font-family: monospace">Select color</label><br />
+            <button onclick="colorSubmit()">Enter</button>
+        </form>
+        <form
+            style="text-align: center; margin-top: 5vh"
+            onsubmit="return false"
+        >
+            <input
+                type="range"
+                id="brightness"
+                style="width: 30vw; margin-left: 0vw"
+                min="1"
+                max="100"
+                value="50"
+                step="1"
+            /><br />
+            <label style="font-family: monospace"
+                >Set the brightness 1-100</label
+            ><br />
+            <button onclick="brightnessSubmit()">Enter</button>
+        </form>
+    </body>
+</html>
